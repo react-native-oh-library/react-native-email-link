@@ -103,7 +103,8 @@ export class RNEmailLinkTurboModule extends TurboModule implements TM.EmailLinkN
       'cc': [encodeURI(composeOptions.cc)],
       'bcc': [encodeURI(composeOptions.bcc)],
       'subject': encodeURI(composeOptions.subject),
-      'body': encodeURI(composeOptions.body),
+      'body': !!composeOptions.encodeBody ? encodeURIComponent(encodeURI(composeOptions.body)) :
+      encodeURI(composeOptions.body),
       'ability.want.params.uriPermissionFlag': Constants.URI_PERMISSION_FLAG
     };
     let abilityStartCallback: common.AbilityStartCallback = {
@@ -147,8 +148,8 @@ export class RNEmailLinkTurboModule extends TurboModule implements TM.EmailLinkN
     !!composeOptions.cc ? uriArray.push(Constants.CC + composeOptions.cc + Constants.URI_AND) : Constants.EMPTY;
     !!composeOptions.bcc ? uriArray.push(Constants.BCC + composeOptions.bcc + Constants.URI_AND) : Constants.EMPTY;
     if (!!composeOptions.encodeBody) {
-      !!composeOptions.bcc ? uriArray.push(Constants.BCC + encodeURIComponent(composeOptions.bcc) + Constants.URI_AND) :
-      Constants.EMPTY;
+      !!composeOptions.body ?
+      uriArray.push(Constants.BODY + encodeURIComponent(composeOptions.body) + Constants.URI_AND) : Constants.EMPTY;
     } else {
       !!composeOptions.body ? uriArray.push(Constants.BODY + composeOptions.body + Constants.URI_AND) : Constants.EMPTY;
     }
