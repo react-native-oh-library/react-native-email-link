@@ -23,7 +23,7 @@ import { Constants, prefixes, titles } from '../utils/Constants';
 export class RNEmailLinkTurboModule extends TurboModule implements TM.EmailLinkNativeModule.Spec {
   private context = getContext(this) as common.UIAbilityContext;
 
-  getEmailClients(): Promise<{ androidPackageName: string; title: string; prefix: string; iOSAppName: string; id: string; }[]> {
+  getEmailClients(): Promise<{ androidPackageName: string; title: string; prefix: string; iOSAppName: string; id: string; harmonyOSBundleName: string }[]> {
     return new Promise((resolve, reject) => {
       let availableApps = [];
       for (let app in prefixes) {
@@ -44,6 +44,7 @@ export class RNEmailLinkTurboModule extends TurboModule implements TM.EmailLinkN
             prefix: Constants.EMPTY,
             iOSAppName: Constants.EMPTY,
             id: title,
+            harmonyOSBundleName: title
           });
           result = acc;
         }
