@@ -1,4 +1,4 @@
-# @react-native-oh-tpl/react-native-email-link
+# @react-native-ohos/react-native-email-link
 
 This project is based on [react-native-email-link](https://github.com/tschoffelen/react-native-email-link)
 
