@@ -1,6 +1,9 @@
-/**
- * Adds the given query schemes to the infoPlist app config
+/*
+ * Copyright (c) 2024 Huawei Device Co., Ltd. All rights reserved
+ * Use of this source code is governed by a MIT license that can be
+ * found in the LICENSE file.
  */
+
 const withLSApplicationQueriesSchemes = (config, schemes) => {
   if (!config.ios) {
     config.ios = {};

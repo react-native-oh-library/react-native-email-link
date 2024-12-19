@@ -1,0 +1,11 @@
+[
+    {
+        "Name": "react-native-email-link",
+        "License": "MIT License",
+        "License File": "https://github.com/tschoffelen/react-native-email-link/blob/master/LICENSE",
+        "Version Number": "1.15.0-0.0.2",
+        "Owner" : "xiafeng@huawei.com",
+        "Upstream URL": "https://github.com/tschoffelen/react-native-email-link",
+        "Description": "email-link for react-native"
+    }
+]
